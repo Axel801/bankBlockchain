@@ -1,0 +1,3 @@
+truffle test --network development --show-events
+
+--compile-none => No compila el SC de nuevo.
