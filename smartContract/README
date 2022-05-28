@@ -4,7 +4,7 @@ truffle test --network development --show-events
 
 
 Deploy in network
-truffle deploy --network development
+truffle migrate --network development --reset
 
 
 Generar web3j clase 
@@ -12,7 +12,7 @@ Generar web3j clase
 web3j generate truffle --truffle-json=.\build\contracts\Bank.json -o ./web3j -p com.example.bank.bank.contracts
 
 
-
+let accounts = await web3.eth.getAccounts()
 
 #### Truffle console
 

@@ -46,7 +46,7 @@ contract Bank {
         emit eventAddFunds(msg.value, msg.sender);
     }
 
-    function whitdrawFunds(uint256 _amount)
+    function withdrawFunds(uint256 _amount)
         public
         payable
         amountNotZero(_amount)

@@ -49,7 +49,7 @@ contract("BankTest", function (accounts) {
   it("Withdraw balance", async () => {
     let withdraw = 500;
     let balanceAccount = await app.getBalanceOf(accounts[0]).then(r => r.toNumber());
-    await app.whitdrawFunds(withdraw, { from: accounts[0] });
+    await app.withdrawFunds(withdraw, { from: accounts[0] });
 
 
     let balanceAccountAfterWithdraw = await app.getBalanceOf(accounts[0]).then(r => r.toNumber());
@@ -61,7 +61,7 @@ contract("BankTest", function (accounts) {
     let reason = "";
     try {
       let withdraw = 1000;
-      await app.whitdrawFunds(withdraw, { from: accounts[1] });
+      await app.withdrawFunds(withdraw, { from: accounts[1] });
     } catch (error) {
       reason = getReason(error);
     }
@@ -72,7 +72,7 @@ contract("BankTest", function (accounts) {
     let reason = "";
     try {
       let withdraw = 0;
-      await app.whitdrawFunds(withdraw, { from: accounts[0] });
+      await app.withdrawFunds(withdraw, { from: accounts[0] });
     } catch (error) {
       reason = getReason(error);
     }
@@ -83,7 +83,7 @@ contract("BankTest", function (accounts) {
     let reason = "";
     try {
       let withdraw = 10000;
-      await app.whitdrawFunds(withdraw, { from: accounts[0] });
+      await app.withdrawFunds(withdraw, { from: accounts[0] });
     } catch (error) {
       reason = getReason(error);
     }
