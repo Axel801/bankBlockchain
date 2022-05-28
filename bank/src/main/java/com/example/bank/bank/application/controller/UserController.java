@@ -1,20 +1,14 @@
 package com.example.bank.bank.application.controller;
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.List;
 
 import com.example.bank.bank.domain.data.AmountDto;
 import com.example.bank.bank.domain.data.TransactionDto;
 import com.example.bank.bank.domain.data.UserDto;
-import com.example.bank.bank.domain.data.WalletDto;
-import com.example.bank.bank.domain.port.api.GanacheServicePort;
-
 import com.example.bank.bank.domain.port.api.UserServicePort;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -30,13 +24,15 @@ public class UserController {
         return userServicePort.getUserById(id);
     }
 
-    @PostMapping("/add")
+
+    //TODO change to Create
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public UserDto addUser(@RequestBody UserDto userDto) throws IOException {
         return this.userServicePort.addUser(userDto);
     }
 
-    @PostMapping("/addmoney")
+    @PostMapping("/add-money")
     public UserDto addMoney(@RequestBody AmountDto amountDto) {
         return this.userServicePort.addMoney(amountDto);
     }

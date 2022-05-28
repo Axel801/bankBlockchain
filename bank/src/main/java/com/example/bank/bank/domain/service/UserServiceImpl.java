@@ -50,13 +50,6 @@ public class UserServiceImpl implements UserServicePort {
         return userPersistencePort.getUserById(id);
     }
 
-//    @Override
-//    public UserDto updateUserWallet(WalletDto walletDto, long id) {
-//        UserDto user = this.getUserById(id);
-//        user.setWallet(walletDto.getWallet());
-//        return this.updateUser(user);
-//    }
-
     @Override
     public UserDto addMoney(AmountDto amountDto) {
 
