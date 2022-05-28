@@ -72,7 +72,7 @@ contract("BankTest", function (accounts) {
     let reason = "";
     try {
       let withdraw = 0;
-      await app.whitdrawFunds(withdraw, { from: accounts[0], value: 0 });
+      await app.whitdrawFunds(withdraw, { from: accounts[0] });
     } catch (error) {
       reason = getReason(error);
     }
@@ -83,7 +83,7 @@ contract("BankTest", function (accounts) {
     let reason = "";
     try {
       let withdraw = 10000;
-      await app.whitdrawFunds(withdraw, { from: accounts[0], value: 0 });
+      await app.whitdrawFunds(withdraw, { from: accounts[0] });
     } catch (error) {
       reason = getReason(error);
     }
@@ -101,5 +101,28 @@ contract("BankTest", function (accounts) {
 
     assert(balanceAccountAfterWithdraw == (actualBalance + withdraw));
   });
+
+  it("Withdraw all funds", async () => {
+    await app.addFunds({ from: accounts[0], value: 100000 });
+
+
+    let balanceAccountBefore = await web3.eth.getBalance(accounts[0]).then(r => Number(r));
+    let balanceAccountSC = await app.getBalanceOf(accounts[0]).then(r => r.toNumber());
+
+
+    let receipt = await app.withdrawAllFunds({ from: accounts[0] });
+    let gasUsed = receipt.receipt.gasUsed;
+    let gasPrice = await web3.eth.getTransaction(receipt.tx).then(tx => Number(tx.gasPrice));
+
+
+    let balanceAccountAfter = await web3.eth.getBalance(accounts[0]).then(r => Number(r));
+
+    assert.equal(balanceAccountAfter + (gasPrice * gasUsed), balanceAccountBefore + balanceAccountSC);
+
+  });
+
+
+
+
 
 });

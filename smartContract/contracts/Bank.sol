@@ -56,6 +56,11 @@ contract Bank {
         transferTo(_amount, msg.sender);
     }
 
+    function withdrawAllFunds() public haveFunds {
+        uint256 balanceUser = getBalanceOf(address(msg.sender));
+        transferTo(balanceUser, address(msg.sender));
+    }
+
     function transferTo(uint256 _amount, address _to)
         public
         payable
