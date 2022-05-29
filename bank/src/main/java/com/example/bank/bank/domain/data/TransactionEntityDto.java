@@ -1,13 +1,20 @@
 package com.example.bank.bank.domain.data;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class TransactionEntityDto {
     private Long id;
     private UserDto fromId;
     private UserDto toId;
     private long value;
 
-    public TransactionEntityDto() {
-    }
 
     public TransactionEntityDto(UserDto fromId, UserDto toId, long value) {
         this.fromId = fromId;

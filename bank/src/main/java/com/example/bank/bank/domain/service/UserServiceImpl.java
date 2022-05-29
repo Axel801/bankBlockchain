@@ -1,13 +1,10 @@
 package com.example.bank.bank.domain.service;
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.List;
 
 import com.example.bank.bank.domain.data.*;
 import com.example.bank.bank.domain.exceptions.NoBalanceException;
-import com.example.bank.bank.domain.exceptions.ValueFieldIsException;
-import com.example.bank.bank.domain.port.api.GanacheServicePort;
 import com.example.bank.bank.domain.port.api.UserServicePort;
 
 import com.example.bank.bank.domain.port.spi.TransactionPersistencePort;

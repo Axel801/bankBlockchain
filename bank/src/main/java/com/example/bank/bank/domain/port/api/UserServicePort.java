@@ -1,13 +1,11 @@
 package com.example.bank.bank.domain.port.api;
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.List;
 
 import com.example.bank.bank.domain.data.AmountDto;
 import com.example.bank.bank.domain.data.TransactionDto;
 import com.example.bank.bank.domain.data.UserDto;
-import com.example.bank.bank.domain.data.WalletDto;
 
 public interface UserServicePort {
 
