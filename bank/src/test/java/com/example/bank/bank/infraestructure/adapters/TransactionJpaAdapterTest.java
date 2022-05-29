@@ -84,7 +84,7 @@ class TransactionJpaAdapterTest {
         List<Transaction> listTransaction = transactionRepository.findAllTransactionsById(this.userFromTest.getId());
 
         assertThat(listTransaction).isNotNull();
-        assertThat(listTransaction.size()).isEqualTo(2);
+        assertThat(listTransaction.size()).isGreaterThanOrEqualTo(2);
 
     }
 
