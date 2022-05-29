@@ -1,13 +1,9 @@
 package com.example.bank.bank.configuration;
 
-import com.example.bank.bank.domain.port.api.GanacheServicePort;
-import com.example.bank.bank.domain.port.api.UserServicePort;
-import com.example.bank.bank.domain.port.spi.GanachePersistencePort;
+import com.example.bank.bank.domain.port.spi.BlockchainPersistencePort;
 import com.example.bank.bank.domain.port.spi.TransactionPersistencePort;
 import com.example.bank.bank.domain.port.spi.UserPersistencePort;
-import com.example.bank.bank.domain.service.GanacheServiceImpl;
-import com.example.bank.bank.domain.service.UserServiceImpl;
-import com.example.bank.bank.infraestructure.adapters.GanacheAdapter;
+import com.example.bank.bank.infraestructure.adapters.BlockchainAdapter;
 import com.example.bank.bank.infraestructure.adapters.TransactionJpaAdapter;
 import com.example.bank.bank.infraestructure.adapters.UserJpaAdapter;
 
@@ -28,13 +24,13 @@ public class UserConfig {
 //    }
 
     @Bean
-    public GanachePersistencePort ganachePersistencePort() {
-        return new GanacheAdapter();// TODO: Add in properties
+    public BlockchainPersistencePort blockchainPersistencePort() {
+        return new BlockchainAdapter();// TODO: Add in properties
     }
 
 //    @Bean
-//    public GanacheServicePort ganacheServicePort() {
-//        return new GanacheServiceImpl(ganachePersistencePort());
+//    public BlockchainServicePort ganacheServicePort() {
+//        return new BlockchainServiceImpl(ganachePersistencePort());
 //    }
 
     @Bean

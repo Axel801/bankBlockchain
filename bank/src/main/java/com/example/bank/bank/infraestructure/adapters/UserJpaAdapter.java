@@ -35,7 +35,6 @@ public class UserJpaAdapter implements UserPersistencePort {
     @Override
     @Transactional
     public UserDto updateUser(UserDto userDto) {
-
         return addUser(userDto);
     }
 
