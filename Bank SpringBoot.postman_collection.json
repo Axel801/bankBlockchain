@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "af2021e4-40f7-48fe-a3df-00018078049f",
+		"name": "Bank SpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Axel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddMoneyToUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"amount\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/add-money",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"add-money"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromId\": \"1\",\r\n    \"toId\": \"2\",\r\n    \"value\":\"5\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/transfer/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"transfer",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTransfer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/transaction/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"transaction",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blockchain",
+			"item": [
+				{
+					"name": "Wallet Balance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/blockchain/user-balance/0x0465fe03C1F5e0A4DaE6B35E5091B8A2B518ef3c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blockchain",
+								"user-balance",
+								"0x0465fe03C1F5e0A4DaE6B35E5091B8A2B518ef3c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BankSC Balance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/blockchain/bank-balance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blockchain",
+								"bank-balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Eth in SC",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"privateKey\": \"108ee9f2e7ec76c29ca9dccf1a8f7a1eaaaaa1c5252fe05c489ea838f64e863f\",\r\n    \"address\": \"0x2D1a59fa861744c646cfECf305b8b3B880457866\",\r\n    \"amountWei\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/blockchain/bank/add-money",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blockchain",
+								"bank",
+								"add-money"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BankSC getBalanceOf {address}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/blockchain/bank/user-balance/0x2D1a59fa861744c646cfECf305b8b3B880457866",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blockchain",
+								"bank",
+								"user-balance",
+								"0x2D1a59fa861744c646cfECf305b8b3B880457866"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BankSC withdrawFunds",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"0x2D1a59fa861744c646cfECf305b8b3B880457866\",\r\n    \"privateKey\": \"108ee9f2e7ec76c29ca9dccf1a8f7a1eaaaaa1c5252fe05c489ea838f64e863f\",\r\n    \"amountWei\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/blockchain/bank/withdraw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blockchain",
+								"bank",
+								"withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BankSC withdrawAllFunds",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"0x2D1a59fa861744c646cfECf305b8b3B880457866\",\r\n    \"privateKey\": \"108ee9f2e7ec76c29ca9dccf1a8f7a1eaaaaa1c5252fe05c489ea838f64e863f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/blockchain/bank/withdraw-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blockchain",
+								"bank",
+								"withdraw-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BankSC transfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addressFrom\":\"0x2D1a59fa861744c646cfECf305b8b3B880457866\",\r\n    \"privateKey\":\"108ee9f2e7ec76c29ca9dccf1a8f7a1eaaaaa1c5252fe05c489ea838f64e863f\",\r\n    \"addressTo\": \"0x0465fe03C1F5e0A4DaE6B35E5091B8A2B518ef3c\",\r\n    \"amountWei\": 20\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/blockchain/bank/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blockchain",
+								"bank",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
