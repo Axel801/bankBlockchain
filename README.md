@@ -15,3 +15,14 @@ Puntos a destacar:
 - Parte Blockchain (Obligatorio)  
 
 [Video demo](https://www.youtube.com/watch?v=vroECrMF62g)
+
+Levantar proyecto Java:
+
+- Servidor SQL (cambiar las properties en el fichero *application.properties*)
+
+- Ganache levantado con el contrato desplegado
+- Generar la nueva clase del SmartContract con web3j para que modifique su nueva address y moverlo al paquete `com.example.bank.bank.domain.contracts`
+
+```
+web3j generate truffle --truffle-json=.\build\contracts\Bank.json -o ./web3j -p com.example.bank.bank.contracts
+```
