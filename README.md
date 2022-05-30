@@ -13,3 +13,5 @@ Puntos a destacar:
 - Conceptos DDD
 - Base de datos (puedes usar una base de datos simulada en memoria, H2 en memoria, etc)
 - Parte Blockchain (Obligatorio)  
+
+[Video demo](https://www.youtube.com/watch?v=vroECrMF62g)
